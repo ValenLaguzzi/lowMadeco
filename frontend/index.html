@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>WorkStation - Iniciar Sesión</title>
+      <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        .login-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .forgot-password {
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
+        .login-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>WorkStation - Iniciar Sesión</h2>
+        <input type="email" placeholder="Correo Electrónico" class="input-field" required><br>
+        <input type="password" placeholder="Contraseña" class="input-field" required><br>
+        <button class="login-button">Iniciar Sesión</button><br>
+        <div class="forgot-password" onclick="forgotPassword()">¿Olvidaste tu contraseña?</div>
+    </div>
+
+    <script>
+        function forgotPassword() {
+            // Redirige al usuario a la página recuperaContraseña.html
+            window.location.href = "recuperarContraseña.html";
+        }
+    </script>
+</body>
+</html>

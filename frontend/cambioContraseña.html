@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Cambiar Contraseña</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        .change-password-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .change-password-button {
+            padding: 9px 18px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .change-password-button:hover {
+            background-color: #2980b9;
+        }
+        .back-to-login {
+            padding: 10px;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="change-password-container">
+        <h2>Cambiar Contraseña</h2>
+        <input type="password" placeholder="Ingrese su nueva contraseña" class="input-field" required><br>
+        <input type="password" placeholder="Vuelva a ingresar la nueva contraseña" class="input-field" required><br>
+        <button class="change-password-button">Cambiar Contraseña</button><br>
+        <div class="back-to-login" onclick="backToLogin()">Volver a Inicio</div>
+    </div>
+
+    <script>
+        function backToLogin() {
+            // Redirige al usuario a la página de inicio
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
