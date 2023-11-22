@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/desarrollo/proyectos/lowMadeco/base.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="297"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="703"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:mainusuario"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="usuario" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="79"/><column index="2" value="134"/><column index="3" value="195"/><column index="4" value="248"/><column index="5" value="253"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">import sqlite3
-conexion = sqlite3.connect(´base´.db´)
-mi_cursor =  conexion.cursor()
-
-conexion.close()
-
-importt sqlite3
-conexion = sqlite3(´base.db´)
-
-
-</sql><current_tab id="0"/></tab_sql></sqlb_project>
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Desarrollo/Mis Proyectos/lowMadeco/base.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1092"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:mainusuario"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="usuario" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="4" mode="0"/></sort><column_widths><column index="1" value="147"/><column index="2" value="262"/><column index="3" value="190"/><column index="4" value="392"/><column index="5" value="703"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (1111,'LAUTARO','EMPLEADO','CRACK','LAUTYREDRUELLO@HOTMAIL');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (2222,'VALENTIN','EMPLEADO','CAPO', 'VALEN@GMAIL.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (3333, 'JUAN', 'EMPLEADO', 'GENIO1','JUAN@OUTLOOK');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (4444,'DIEGO', 'EMPLEADO','MASTER3','DIEGOP@GMAIL.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (5555, 'HERNAN', 'EMPLEADO','CAMIONERO','HERNAN@HOTMAIL.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (12345, 'MARTIN', 'CLIENTE','CONTRASENIA','MARTINCITO@HOTMAIL.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (67890, 'VICTORIA', 'CLIENTE','GANAR45','VICTORIA@GMAIL.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (90003, 'MATIAS','CLIENTE', 'IDOLO', 'MATI01@OUTLOOK.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (90004, 'HERNAN', 'CLIENTE', 'PICHICHI', 'H.HERNAN@GMAIL.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (90005, 'LAUTARO', 'CLIENTE', 'MESSI10', 'LAUTARITO@GMAIL.COM');
+INSERT INTO usuario(ID,NOMBRE,ROL,CONTRASENIA,EMAIL) VALUES (90006, 'CATALINA', 'CLIENTE', 'GATITO123', 'CATAA@OUTLOOK.COM');</sql><current_tab id="0"/></tab_sql></sqlb_project>
