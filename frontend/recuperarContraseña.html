@@ -46,8 +46,8 @@
 <body>
     <div class="recovery-container">
         <h2>WorkStation - Recuperar Contraseña</h2>
-        <input type="email" placeholder="Correo Electrónico" class="input-field" required><br>
-        <input type="text" placeholder="Token" class="input-field" required><br>
+        <input id="email" type="email" placeholder="Correo Electrónico" class="input-field" required><br>
+        <input id="token" type="text" placeholder="Token" class="input-field" required><br>
         <button class="recovery-button" onclick="cambioContrasenia()">Recuperar Contraseña</button><br>
         <div class="back-to-login" onclick="backToLogin()">Volver a Inicio</div>
     </div>
@@ -55,9 +55,13 @@
     <script>
         function backToLogin() {
             // Puedes redirigir a la página de inicio de sesión
-            window.location.href = "index.html";
+            window.location.href = "/inicio";
         }
         function cambioContrasenia(){
+            if (email || token == null) {
+                alert('Los campos no pueden estar vacios')
+                return false
+            }
             window.location.href= "cambioContraseña.html";
         }
     </script>
