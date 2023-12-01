@@ -44,17 +44,46 @@
 <body>
     <div class="container">
         <h2>WorkStation - Iniciar Sesión</h2>
-        <input type="email" placeholder="Correo Electrónico" class="input-field" required><br>
-        <input type="password" placeholder="Contraseña" class="input-field" required><br>
-        <button class="login-button">Iniciar Sesión</button><br>
-        <div class="forgot-password" onclick="forgotPassword()">¿Olvidaste tu contraseña?</div>
-    </div>
-
-    <script>
-        function forgotPassword() {
-            // Redirige al usuario a la página recuperaContraseña.html
-            window.location.href = "/recuperarContrasenia";
-        }
-    </script>
-</body>
+        <form>
+            <div class="container">
+                <h2>WorkStation - Iniciar Sesión</h2>
+                <input id="email" type="email" placeholder="Correo Electrónico" class="input-field" required><br>
+                <input id="contrasenia" type="password" placeholder="Contraseña" class="input-field" required><br>
+                <button class="login-button">Iniciar Sesión</button><br>
+                <div class="forgot-password" onclick="forgotPassword()">¿Olvidaste tu contraseña?</div>
+        </form>
+            </div>
+ </div>
+        
+                <script>
+                    function forgotPassword() {
+                        // Redirige al usuario a la página recuperaContraseña.html
+                        window.location.href = "/recuperarContrasenia";
+                        function loginUsuario(){
+                        const email = document.getElementById('email').value
+                        const contrasenia = document.getElementById('contrasenia').value
+            
+                        fetch('/iniciarUsuario', {
+                            method: 'POST',
+                            body: JSON.stringify({ email, contrasenia }),
+                                headers: {
+                                'Content-Type': 'application/json'
+                                    }
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+            
+                            if (data.mensaje === 'ok') {
+                                window.location.href = '/bienvenida';
+                            } else {
+                                alert('Usuario o contraseña incorrectos.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                      });
+                    };
+                    }
+                </script>
+ </body>
 </html>
