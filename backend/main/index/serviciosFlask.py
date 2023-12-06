@@ -3,7 +3,7 @@ from flask import Flask, jsonify, render_template, request
 from logueo import validar_correo_electronico
 #framework
 
-app = Flask(__name__, template_folder ="C:\\desarrollo\\proyectos\\lowMadeco\\frontend")
+app = Flask(__name__, template_folder ="C:\\Desarrollo\\lowMadeco\\frontend")
 
 @app.route('/inicio')
 def inicio():
@@ -17,19 +17,25 @@ def recuperarContrasenia():
 def cambioContraseña():
     return render_template('cambioContraseña.html')
 
-@app.route('/inicio')
-def inicio():
-    mail = request.form.get('email')
-    password = request.form.get('password')
+@app.route('/iniciarUsuario', methods=['POST'])
+def login():
+    data = request.get_json
+    mail = data.__get__('email')
+    password = data.__get__('contrasenia')
+    mensaje = "hola"
+    
+    if mail and password is not None:
+        mensaje = "ok"
+
     if validar_correo_electronico(mail):
-     return "Datos del formulario recibidos: Email={}, Password={}".format(mail, password)
+     return mensaje == "aguante boca"
     else:
-      return print("error")
+     return mensaje
+    
 
     
      
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 
