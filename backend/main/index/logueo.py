@@ -15,15 +15,15 @@ def validar_contrasenia(password):
         return False
     
     # Al menos una letra minúscula
-    if not any(c.islower() for c in password):
+    if not re.search(c ['a-z'] for c in password):
         return False
     
     # Al menos una letra mayúscula
-    if not any(c.isupper() for c in password):
+    if not any(c ['A-Z'] for c in password):
         return False
     
     # Al menos un dígito
-    if not any(c.isdigit() for c in password):
+    if not any(c in ['0-9'] for c in password):
         return False
     
     # Al menos un carácter especial
