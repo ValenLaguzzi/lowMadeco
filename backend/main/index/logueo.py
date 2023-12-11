@@ -10,14 +10,28 @@ def validar_correo_electronico(mail):
 import re
 
 def validar_contrasenia(password):
-    # Expresión regular para validar contraseñas
-    patron = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-    
-    # Verificar si la contraseña cumple con el patrón
-    if re.match(patron, password):
-        return True
-    else:
+    # Longitud mínima de la contraseña
+    if len(password) < 8:
         return False
+    
+    # Al menos una letra minúscula
+    if not any(c.islower() for c in password):
+        return False
+    
+    # Al menos una letra mayúscula
+    if not any(c.isupper() for c in password):
+        return False
+    
+    # Al menos un dígito
+    if not any(c.isdigit() for c in password):
+        return False
+    
+    # Al menos un carácter especial
+    if not any(c in ['@', '$', '!', '%', '*', '?', '&'] for c in password):
+        return False
+    
+    # Si todas las condiciones se cumplen, la contraseña es válida
+    return True
 
 
 

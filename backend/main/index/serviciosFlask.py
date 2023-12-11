@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask import Flask, jsonify, render_template, request
 from logueo import validar_correo_electronico, validar_contrasenia
-from connectionSQL import consultarEmail
+from connectionSQL import consultarEmail, consultarContrasenia
 #framework
 
 app = Flask(__name__, template_folder ="C:\\desarrollo\\proyectos\\lowMadeco\\frontend", static_folder = "C:\\desarrollo\\proyectos\\lowMadeco\\frontend\\staticFolder")
@@ -30,10 +30,10 @@ def login():
 
     if validar_correo_electronico(mail):
        if validar_contrasenia(password):
-        if conexionSQL():   
-         return mensaje == "aguante boca"
+        if consultarEmail(mail) and consultarContrasenia():   
+         return mensaje == "ok"
     else:
-     return mensaje
+     return mensaje == "error"
     
 
     
