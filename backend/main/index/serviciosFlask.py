@@ -1,9 +1,10 @@
 from flask import Flask, render_template
 from flask import Flask, jsonify, render_template, request
-from logueo import validar_correo_electronico
+from logueo import validar_correo_electronico, validar_contrasenia
+from connectionSQL import consultarEmail, consultarContrasenia
 #framework
 
-app = Flask(__name__, template_folder ="C:\\Desarrollo\\lowMadeco\\frontend")
+app = Flask(__name__, template_folder ="C:\\Desarrollo\\lowMadeco\\frontend", static_folder = "C:\\Desarrollo\\lowMadeco\\frontend\\staticFolder")
 
 @app.route('/inicio')
 def inicio():
@@ -28,9 +29,11 @@ def login():
         mensaje = "ok"
 
     if validar_correo_electronico(mail):
-     return mensaje == "aguante boca"
+       if validar_contrasenia(password):
+        if consultarEmail(mail) and consultarContrasenia():   
+         return mensaje == "ok"
     else:
-     return mensaje
+     return mensaje == "error"
     
 
     
