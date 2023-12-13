@@ -6,7 +6,7 @@ def consultarEmail(mail):
     conexion = sqlite3.connect('base.db')
     mi_cursor = conexion.cursor()
 
-    resultado = mi_cursor.execute("SELECT * FROM tabla_correos WHERE correo = ?", (mail,))
+    resultado = mi_cursor.execute("SELECT * FROM tabla_correos WHERE correo = ", (mail,))
     
 
     conexion.close()

@@ -4,7 +4,7 @@ from logueo import validar_correo_electronico, validar_contrasenia
 from connectionSQL import consultarEmail, consultarContrasenia
 #framework
 
-app = Flask(__name__, template_folder ="C:\\desarrollo\\proyectos\\lowMadeco\\frontend", static_folder = "C:\\desarrollo\\proyectos\\lowMadeco\\frontend\\staticFolder")
+app = Flask(__name__, template_folder ="C:\\Desarrollo\\Mis Proyectos\\lowMadeco\\frontend", static_folder = "C:\\Desarrollo\\Mis Proyectos\\lowMadeco\\frontend\\staticFolder")
 
 @app.route('/inicio')
 def inicio():
