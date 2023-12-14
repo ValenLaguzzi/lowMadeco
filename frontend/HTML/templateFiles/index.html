@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../staticFiles/main.css">
+    <title>WorkStation - Iniciar Sesión</title>
+      <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        .login-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .forgot-password {
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
+        .login-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>WorkStation - Iniciar Sesión</h2>
+        <form>
+        <input type="email" name="mail" placeholder="Correo Electrónico" class="input-field" required id="email"><br>
+        <input type="password" placeholder="Contraseña" class="input-field" required id="contrasenia"><br>
+        <button class="login-button"  onclick="loginUsuario()" id="iniciarSesion">Iniciar Sesión</button><br>
+        <div class="forgot-password" onclick="forgotPassword()">¿Olvidaste tu contraseña?</div>
+        </form>
+    </div>
+
+    <script>
+    function forgotPassword() {
+        // Redirige al usuario a la página recuperaContraseña.html
+        window.location.href = "/recuperarContrasenia";
+    }
+
+    function bienvenida() {
+        window.location.href = "/bienvenida";
+    }
+
+    function loginUsuario() {
+        const email = document.getElementById('email').value;
+        const contrasenia = document.getElementById('contrasenia').value;
+        const mensaje = ""
+
+        fetch('/iniciarUsuario', {
+            method: 'POST',
+            body: JSON.stringify({ email, contrasenia, mensaje }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.mensaje == "OK") {
+                bienvenida();
+            } else {
+                alert('Usuario o contraseña incorrectos.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    };
+    
+        
+
+     
+
+
+      
+    </script>
+</body>
+</html>

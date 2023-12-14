@@ -6,9 +6,9 @@ def validar_correo_electronico(mail):
 
      # verifica que el correo tenga el formato correcto
     if re.match(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$", mailStr):
-        return False
-    else: 
         return True
+    else: 
+        return False
 
 import re
 

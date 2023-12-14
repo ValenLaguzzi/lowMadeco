@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../staticFiles/bienvenida.css">
+    <title></title>
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    
+    <h1>Bienvenido a Workstation</h1>
+  </header>
+    <nav>
+        <ul>
+            <li><a onclick="bienvenida()">Inicio</a></li>
+            <li><a onclick="compras()">Compras</a></li>
+            <li><a onclick="ventas()">Ventas</a></li>
+            <li><a onclick="clientes()">Clientes</a></li>
+            <li><a onclick="proveedores()">Proveedores</a></li>
+            <li><a onclick="productos()">Productos</a></li>
+        </ul>
+    </nav>
+
+  <button id="night-mode" onclick="toggleNightMode()">🌙</button>
+  
+
+  <script>
+
+    function bienvenida() {
+      window.location.href = '/bienvenida';
+
+    }
+
+    function compras() {
+      window.location.href = '/compras';
+    }
+
+    function ventas() {
+
+      window.location.href = '/ventas';
+    }
+
+    function clientes (){
+
+      window.location.href = '/clientes'
+    }
+    function proveedores() {
+
+      window.location.href = '/proveedores';
+    }
+
+      function productos (){
+
+      window.location.href = '/productos'
+    }
+
+    
+
+  </script>
+  
+  <script>
+    // Función para cambiar al modo nocturno
+    function toggleNightMode() {
+    // Obtener el elemento body
+    var body = document.body;
+    // Obtener el elemento botón
+    var button = document.getElementById("night-mode");
+    // Cambiar la clase del body y el botón
+    body.classList.toggle("night-mode");
+    button.classList.toggle("night-mode");
+    }
+  </script>
+  <script>
+  // Función para desplegar y ocultar el menú
+    function toggleMenu() {
+    // Obtener el elemento menú
+    var menu = document.querySelector("nav ul");
+    // Cambiar la propiedad display del menú
+    menu.style.display = menu.style.display === "block" ? "none" : "block";}
+   // Obtener el elemento icono del menú
+   var menuIcon = document.querySelector("div.menu-icon");
+   // Añadir un evento de clic al icono del menú
+  menuIcon.addEventListener("click", toggleMenu);
+</script>
+
+
+
+</body>
+
+</html>

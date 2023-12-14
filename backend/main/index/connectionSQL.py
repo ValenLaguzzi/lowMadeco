@@ -2,27 +2,29 @@ import sqlite3
 
 
 
-def consultarEmail(mail):
-    conexion = sqlite3.connect('C:\Desarrollo\Mis Proyectos\lowMadeco\base.db')
-    mi_cursor = conexion.cursor()
+def consultarDominio(mail, password):
+    try:
+        conexion = sqlite3.connect('C:/Desarrollo/Mis Proyectos/lowMadeco/base.db')
+        mi_cursor = conexion.cursor()
 
-    resultado = mi_cursor.execute("SELECT * FROM usuarios WHERE correo = ?", (mail))
+        mail_str = str(mail)
+
+        mi_cursor.execute('SELECT contrasenia FROM usuario WHERE email = ?', (mail_str,))
+        resultado = mi_cursor.fetchone()
+
+        if password ==  resultado[0]:
+         return True
+        
+    except sqlite3.Error as e:
+        print(f"error: {e}")
+    finally:
+       
+        conexion.close()
+
     
 
-    conexion.close()
-
-    return resultado is not None
 
 
-def consultarContrasenia(password):
-    conexion = sqlite3.connect('C:\Desarrollo\Mis Proyectos\lowMadeco\base.db')
-    mi_cursor = conexion.cursor()
+   
 
-    resultado = mi_cursor.execute("SELECT * FROM usuarios WHERE contraseña = ?", (password))
     
-
-    conexion.close()
-
-    return resultado is not None
-
-

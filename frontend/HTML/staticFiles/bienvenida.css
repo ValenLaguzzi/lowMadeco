@@ -1,0 +1,138 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+
+
+/* Estilos del encabezado */
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: 34px;
+  text-align: center;
+  padding: 25px;
+  display: inline-block;
+  width: 100%;
+  background-color: #778899;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #333363;
+  text-shadow: 1px 1px 1px #999999;
+  margin: 10px;
+
+}
+
+/* Estilos del menú */
+nav {
+  position: fixed;
+  top: 100px;
+  bottom: 0;
+  width: 18%;
+  background-color: #778899;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 10px;
+  color: #333363;
+  box-sizing: border-box;
+  height: 220px;
+}
+
+nav ul {
+  display: inline-block;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul li a {
+  color: #333363;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: lightyellow;
+  cursor: pointer;
+  
+  ;
+}
+
+/* Estilos del botón de modo nocturno */
+#night-mode {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #00a0e4;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilos del icono del menú */
+div.menu-icon {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #00a0e4;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+div.menu-icon span {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+}
+
+
+
+/* Estilos del modo nocturno */
+.night-mode {
+  background: black;
+  color: #fff;
+}
+
+.night-mode h1 {
+  color: white;
+  text-shadow: 2px;
+}
+
+.night-mode nav {
+  background-color: #333;
+}
+
+.night-mode nav ul li a {
+  color: #fff;
+}
+
+.night-mode nav ul li a:hover {
+  color: #00a0e4;
+}
+
+.night-mode #night-mode {
+  background-color: #fff;
+  color: #00a0e4;
+}
+
+.night-mode div.menu-icon {
+  background-color: #fff;
+  color: #00a0e4;
+}
